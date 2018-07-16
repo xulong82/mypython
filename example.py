@@ -1,11 +1,22 @@
+#!/usr/bin/python
+
 # LPTHW exercise 
- 
-print "Hello World!"
-my_age = 35; my_height = 180
-print "He is %s years old and %d tall." % (my_age, my_height)
 
-print """
-There's something going on here.
-With the three double-quotes.
-"""
+from sys import exit
 
+def gold_room():
+    print "This room is full of gold. How much do you take?"
+
+    next = raw_input("> ")
+    if "0" in next or "1" in next:
+        how_much = int(next)
+    else:
+        dead("Type a number.")
+
+    if how_much < 50:
+        print "You win!"
+        exit(0)
+    else:
+        dead("Bastard!")
+
+gold_room()
